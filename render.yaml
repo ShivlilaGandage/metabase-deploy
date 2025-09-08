@@ -1,9 +1,11 @@
 services:
   - type: web
     name: metabase-deploy
-    env: docker
+    env: image
     plan: free
     autoDeploy: true
+    image:
+      url: metabase/metabase:latest
     envVars:
       - key: MB_JETTY_PORT
         value: ${PORT}
