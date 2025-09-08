@@ -1,6 +1,10 @@
 FROM metabase/metabase:latest
 
-# Force Metabase to bind to Render's dynamic port
-ENV MB_JETTY_PORT=$PORT
+# Force Metabase to use Render's assigned PORT
+ENV MB_JETTY_PORT=${PORT}
 
-EXPOSE $PORT
+# Reduce memory for free plan
+ENV JAVA_TOOL_OPTIONS="-Xmx128m"
+
+# Expose the port to Render
+EXPOSE ${PORT}
