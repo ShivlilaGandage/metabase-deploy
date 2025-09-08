@@ -1,13 +1,6 @@
 services:
   - type: web
     name: metabase-deploy
-    env: image
+    env: docker
     plan: free
     autoDeploy: true
-    image:
-      url: metabase/metabase:latest
-    envVars:
-      - key: MB_JETTY_PORT
-        value: ${PORT}
-      - key: JAVA_TOOL_OPTIONS
-        value: "-Xmx350m"
