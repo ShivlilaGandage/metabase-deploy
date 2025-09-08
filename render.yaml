@@ -4,3 +4,6 @@ services:
     env: docker
     plan: free
     autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    ports:
+      - 3000
